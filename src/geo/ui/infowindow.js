@@ -78,7 +78,6 @@ cdb.geo.ui.InfowindowModel = Backbone.Model.extend({
   sortFields: function() {
     this.get('fields').sort(function(a, b) { return a.position - b.position; });
   },
-  //TODO Josh _addField
   _addField: function(fieldName, at, alias) {
     var dfd = $.Deferred();
     if(!this.containsField(fieldName)) {
@@ -96,7 +95,6 @@ cdb.geo.ui.InfowindowModel = Backbone.Model.extend({
   },
 
   addField: function(fieldName, at, alias) {
-    // debugger
     var self = this;
     $.when(this._addField(fieldName, at, alias)).then(function() {
       self.sortFields();
@@ -126,7 +124,6 @@ cdb.geo.ui.InfowindowModel = Backbone.Model.extend({
   },
 
   getAlternativeName: function(fieldName) {
-    // debugger
     return this.get("alternative_names") && this.get("alternative_names")[fieldName];
   },
 
