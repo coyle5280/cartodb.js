@@ -156,12 +156,11 @@
                 cdb.god.currentFilterLi.click();
             }
             var scrollContainer = cdb.god.currentFilterLi.scrollParent();
-            // scrollContainer.animate({
-            //     scrollTop: cdb.god.currentFilterLi.offset().top - scrollContainer.offset().top + scrollContainer.scrollTop()
-            // });
-            scrollContainer.scrollTop(
-                cdb.god.currentFilterLi.offset().top - scrollContainer.offset().top + scrollContainer.scrollTop()
-            );
+            if (scrollContainer) {
+                scrollContainer.scrollTop(
+                    cdb.god.currentFilterLi.offset().top - scrollContainer.offset().top + scrollContainer.scrollTop()
+                );
+            }
         }
       }
 
